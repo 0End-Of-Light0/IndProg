@@ -62,7 +62,7 @@ const Currency = () => {
               console.error(error);
           }
         }
-        setTimeout(() => {  document.querySelector(".block" + i).innerHTML += dstr + "</tbody></table>"; }, 5000);
+        setTimeout(() => {  document.querySelector(".block" + i).innerHTML += dstr + "</tbody></table>"; }, 11000);
       }
     }
   });
