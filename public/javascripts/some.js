@@ -1,10 +1,8 @@
 window.onload = function () {
   Currency()
 };
-async function SomeF(i) {
-  document.querySelector(".block" + i).innerHTML += "</table></thead>";
-}
 const Currency = () => {
+  var dstr = "<table><thead><tr><th>CODE</th><th>NAME</th><th>PRICE</th><th>ACTION</th></tr></thead>";
   readTextFile("./json/data.json", function(text){
     var data = JSON.parse(text);
     //var count = Object.keys(data).length;
@@ -14,7 +12,7 @@ const Currency = () => {
       //console.log(classList);
       if (data.arr[i].curp.indexOf(',') === -1) {
         try {
-          fetch('https://b1d9-2a01-4f9-2a-427-00-2.ngrok-free.app/test/', {
+          fetch('https://e2c4-2a01-4f9-2a-427-00-2.ngrok-free.app/test/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -28,7 +26,7 @@ const Currency = () => {
           return response.json();
         })
         .then(data => {
-          const res = `<table><thead><tr><th>CODE</th><th>NAME</th><th>PRICE</th><th>ACTION</th></tr></thead><tbody><tr><td>${data.arrs[0].Currency}</td><td>${data.arrs[0].Name}</td><td>${data.arrs[0].Close}</td><td><a href='/chart' class="ButtonWB">open</a></td></tr></tbody></table>`;
+          const res = `<table><thead><tr><th>CODE</th><th>NAME</th><th>PRICE</th><th>ACTION</th></tr></thead><tbody><tr><td>${data.info.currency}</td><td>${data.info.name}</td><td>${data.data[0].Close}</td><td><a href='/chart' class="ButtonWB">open</a></td></tr></tbody></table>`;
           const sel = '.block' + i
           document.querySelector(sel).innerHTML = res;
         });
@@ -40,10 +38,10 @@ const Currency = () => {
         const listcur = data.arr[i].curp.split(',');
         const listper = data.arr[i].per.split(',');
         const listint = data.arr[i].int.split(',');
-        document.querySelector(".block" + i).innerHTML = "<table><thead>"
         for (let k = 0; k < listcur.length; k++) {
           try {
-            fetch('https://b1d9-2a01-4f9-2a-427-00-2.ngrok-free.app/test/', {
+            console.log(listcur[k],listper[k],listint[k])
+            fetch('https://e2c4-2a01-4f9-2a-427-00-2.ngrok-free.app/test/', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -57,13 +55,14 @@ const Currency = () => {
               return response.json();
             })
             .then(data => {
-              document.querySelector(".block" + i).innerHTML += `<table><thead><tr><th>CODE</th><th>NAME</th><th>PRICE</th><th>ACTION</th></tr></thead><tbody><tr><td>${data.arrs[0].Currency}</td><td>${data.arrs[0].Name}</td><td>${data.arrs[0].Close}</td><td><a href='/chart' class="ButtonWB">open</a></td></tr></tbody></table>`;
+              console.log(data.data[0].Close, data.info.name, data)
+              dstr += `<tbody><tr><td>${data.info.currency}</td><td>${data.info.name}</td><td>${data.data[0].Close}</td><td><a href='/chart' class="ButtonWB">open</a></td></tr>`;
             });          
             } catch (error) {
-            console.error(error);
+              console.error(error);
           }
         }
-        SomeF(i)
+        setTimeout(() => {  document.querySelector(".block" + i).innerHTML += dstr + "</tbody></table>"; }, 5000);
       }
     }
   });
