@@ -1,0 +1,140 @@
+.main,  .bar, .buttons, .body, .line, .footer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;  
+}
+
+body {
+    display: flex;
+    background-color: #1B1C23;
+}
+
+input {
+    background-color: transparent; /* Убираем фон */
+    color: #EAE1E1; /* Цвет текста */
+    width: 100%; /* Размер автоматический с отступами от краёв 5% */
+    padding: 5% 0; /* Отступы от краёв */
+    border: 2px solid #2B3139; /* Цвет обводки */
+    border-radius: 10px;
+    font-size: 2vh; /* Размер текста */
+    display: block; /* Делаем input блочным элементом */
+    justify-content: flex-start;
+    text-indent: 5%; /* Отступ текста слева */
+}
+
+input:-webkit-autofill{
+	box-shadow:inset 0 0 0 1000px #69447c;
+    -webkit-text-fill-color: #EAE1E1;
+}
+
+.LogoLogin{
+    width: 4vh;
+    height: 5vh; 
+    background-repeat: no-repeat; /* Запрещаем повтор изображения */
+    background-size: contain; /* Изображение вмещается в контейнер */
+    background-position: center; /* Центрируем изображение */
+    /* Само изображение в формате svg */
+    background-image: url("data:image/svg+xml,%3Csvg width='74' height='54' viewBox='0 0 74 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M38.8598 45.8092C41.7773 52.565 31.1898 53.1827 31.1898 53.1827L14.8838 17.0381L16.968 0.444663C16.968 0.444663 35.9424 39.0534 38.8598 45.8092Z' fill='%233E44B8'/%3E%3Cpath d='M65.8091 46.5834C68.3025 52.4156 57.5497 53.0301 57.5497 53.0301L45.0403 25.2119L47.3731 7.35728C47.3731 7.35728 63.3156 40.7511 65.8091 46.5834Z' fill='%233A48AC'/%3E%3Cpath d='M5.72612 7.20717C6.72828 0.300349 16.9681 0.444669 16.9681 0.444669C16.9681 0.444669 11.3281 45.3188 10.8004 49.955C10.2728 54.5913 0.049022 54.2649 0.528755 49.5181C1.00849 44.7714 4.72396 14.114 5.72612 7.20717Z' fill='url(%23paint0_linear_134_677)'/%3E%3Cpath d='M41.9466 47.2699C40.9537 53.0324 31.1898 53.1827 31.1898 53.1827C31.1898 53.1827 36.7191 16.3042 37.2454 12.4341C37.7717 8.56406 47.4812 7.25166 47.4812 7.25166C47.4812 7.25166 42.9394 41.5074 41.9466 47.2699Z' fill='url(%23paint1_linear_134_677)'/%3E%3Cpath d='M68.9784 47.2361C67.979 52.9983 57.7808 53.1265 57.7808 53.1265C57.7808 53.1265 62.55 23.2315 63.2344 18.1819C63.9187 13.1323 73.3485 13.6169 72.6913 18.4502C72.0342 23.2835 69.9779 41.4739 68.9784 47.2361Z' fill='url(%23paint2_linear_134_677)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_134_677' x1='11.7411' y1='0.222335' x2='9.47773' y2='53.4336' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%236EC0F3'/%3E%3Cstop offset='1' stop-color='%23ED23AC'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_134_677' x1='42.911' y1='7.01986' x2='40.5456' y2='53.6572' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2374B9EF'/%3E%3Cstop offset='1' stop-color='%23EB26AD'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear_134_677' x1='68.6014' y1='14.6164' x2='66.6255' y2='53.5751' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E035B4'/%3E%3Cstop offset='0.885' stop-color='%2379B4ED'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.test {
+    height: 50vh;
+    width: 30vh;
+    border: 2px solid #51565B;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.LoginCarta {
+    font-size: 3vh;
+    width: 15vh;
+    margin-top: 2.8vh;
+    background-image: linear-gradient(to bottom, #6EC0F3, #ED23AC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0 auto 0;
+}
+
+.NameField{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 5vh;
+    color: #EAE1E1;
+    height: 3vh;
+    margin-top: 5%;
+}
+
+.description {
+    color:#EAE1E1;
+    font-size: 2vh;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.logo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ButtonRGBLogin {
+    background-color: #AF71CF;
+    color: #1B1C23;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px; /* Регулируйте для получения желаемых закруглений */
+    cursor: pointer;
+    font-weight: bold;
+    background-size: 130% 130%;
+    background-position: center;
+    width: 100%;
+    padding: 5% 0;
+    margin: 0 auto;
+  }
+  
+.ButtonRGBLogin:hover {
+  transition: color 0.3s, background-image 0.3s; /* Добавляем плавное изменение цвета фона и текста при наведении */
+  background-image: linear-gradient(135deg, #6EC0F3, #ED23AC);
+  color: #EAE1E1;
+  background-position: right;
+}
+
+.LoginForm{
+    height: 45vh;
+    width: 30vh;
+    border: 2px solid #51565B;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}
+
+.FogotPassword {
+    text-decoration: none;
+    font-size: 2vh;
+    color: #AF71CF;
+}

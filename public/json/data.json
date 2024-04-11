@@ -1,0 +1,14 @@
+{
+    "arr": [
+        {
+            "curp": "USDRUB,RUBUSD",
+            "per": "1d,1d",
+            "int": "1m,1m"
+        },
+        {
+            "curp": "RUBUSD",
+            "per": "1d",
+            "int": "1m"
+        }
+    ]
+}
